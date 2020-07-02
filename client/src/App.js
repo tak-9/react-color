@@ -7,7 +7,7 @@ function App() {
     const [colorArr, setColorArr] = useState([]);
 
     useEffect(() => {
-        const url 
+        let url = ""; 
         if (process.env.NODE_ENV === "production") {
             url = "/api/color";
         } else { 
