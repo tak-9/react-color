@@ -7,7 +7,12 @@ function App() {
     const [colorArr, setColorArr] = useState([]);
 
     useEffect(() => {
-        const url = "http://localhost:3001/api/color";
+        const url 
+        if (process.env.NODE_ENV === "production") {
+            url = "/api/color";
+        } else { 
+            url = "http://localhost:3001/api/color";
+        }
         axios.get(url)
         .then((resp) => {
             setColorArr(resp.data.color);
